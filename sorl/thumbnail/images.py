@@ -227,8 +227,8 @@ class UrlStorage(Storage):
 
     def open(self, name, mode='rb'):
         url = self.normalize_url(name)
-        python_version = platform.python_version_tuple()[0]
-        user_agent = "python-urllib{python_version}/0.6".format(python_version=python_version)
+        # python_version = platform.python_version_tuple()[0]
+        user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
         req = Request(url, headers={"User-Agent": user_agent})
         return urlopen(req, timeout=settings.THUMBNAIL_URL_TIMEOUT)
 
